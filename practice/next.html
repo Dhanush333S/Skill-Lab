@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tektur&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style contenteditable style="display: block; white-space: pre">
+    html {
+      scroll-behavior: smooth;
+    }
+    marquee {
+      width: 200px;
+      font-family: "Tektur", cursive;
+    }
+    marquee {
+      width: 500px;
+    }
+    .header {
+      background: linear-gradient(#e66465, #9198e5);
+      color: white;
+      box-sizing: border-box;
+      width: fit-content;
+      border: 1px solid black;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    /* @media (max-width:1240px) and (min-width:600px){
+        body{
+            background-color: black;
+        }
+    } */
+    nav {
+      background-color: black;
+      display: flex;
+      position: sticky;
+      top: 3px;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+    }
+    li {
+      color: white;
+      font-size: 1.5rem;
+      margin: 5px 10px;
+    }
+    nav input {
+      margin: auto;
+      margin-right: 30px;
+      height: fit-content;
+    }
+    .container {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      background-color: bisque;
+      margin: auto;
+    }
+    .inside {
+      position: absolute;
+      top: 0px;
+      display: block;
+      height: 100px;
+      width: 100px;
+      background-color: #e66465;
+    }
+    button {
+      position: relative;
+      display: block;
+      padding: 6px;
+      color: white;
+      text-align: center;
+      margin: auto;
+      border: none;
+      border-radius: 3px;
+      background-color: #9198e5;
+      box-shadow: 2px 2px #5a71ce;
+      transition: 1s all ease-out;
+      overflow: hidden;
+    }
+    button::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background-color: white;
+      z-index: -1;
+      /* animation-name: ripple; */
+      /* animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-delay: 0.2s; */
+    }
+    button::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background-color: white;
+      z-index: -1;
+      /* animation-name: ripple; */
+      /* animation-timing-function: ease-in-out;
+      animation-duration: 0.7s;
+      animation-iteration-count: 2;
+      animation-delay: 0.2s; */
+    }
+    #ripple{
+        position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background-color: rgb(248, 10, 10);
+      z-index: -1;
+    }
+    @keyframes ripple {
+      0% {
+        width: 0%;
+        height: 0%;
+        opacity: 0.2;
+      }
+      100% {
+        width: 200%;
+        height: 200%;
+        opacity: 0;
+      }
+    }
+    button:hover {
+      cursor: pointer;
+      transform: scale(0.95);
+    }
+    
+  </style>
+  <body>
+    <nav id="nav">
+      <ul>
+        <li>About</li>
+        <li>Chess</li>
+        <li>Make</li>
+        <li>Call</li>
+      </ul>
+      <input type="text" name="" id="" placeholder="Search a website" />
+    </nav>
+    <div class="header">HelloWorld!</div>
+    <ul type="circle">
+      <li>Hi &#8203;</li>
+      <li>Hi</li>
+      <li>Hi</li>
+    </ul>
+    <ol type="a">
+      <li>hsdfg</li>
+      <li>hsdfg</li>
+      <li>hsdfg</li>
+    </ol>
+    <form action="">
+      <label for="name">Name</label>
+      <input class="name" type="text" />
+      <input type="range" name="name" id="" /><br />
+      <input type="color" name="" id="" /><br />
+      <a href="#nav">Submit</a>
+    </form>
+    <marquee behavior="alternate" bgColor="yellow" direction="right"
+      >HelloWorld!</marquee
+    >
+    <details>
+      <summary>Choose Options</summary>
+      <summary>Option2</summary>
+      <summary>Option3</summary>
+      <summary>Option4</summary>
+    </details>
+    <div class="container">
+      <div class="inside"></div>
+    </div>
+    <br />
+    <hr />
+    <br />
+    <button id="button">Submit Here <div id="ripple"></div></button>
+  </body>
+  <script>
+    let contain=document.getElementById('button')
+    let button = document.getElementById("ripple");
+    contain.addEventListener("click", () => {
+        button.style.display="block";
+      button.style.animation = "ripple 1s ease-in infinite";
+       setTimeout(() => {
+         button.style.animation = "";
+       }, 5000);
+    });
+  </script>
+</html>
